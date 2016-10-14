@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (4.0.1)
+  - Kingfisher (3.1.1)
+  - MJRefresh (3.1.12)
+  - PKHUD (3.2.1)
+  - R.swift (3.0.0):
+    - R.swift.Library (~> 3.0.0)
+  - R.swift.Library (3.0.1)
+  - SnapKit (3.0.1)
+  - SwiftyJSON (3.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher
+  - MJRefresh
+  - PKHUD (from `https://github.com/toyship/PKHUD.git`)
+  - R.swift
+  - SnapKit
+  - SwiftyJSON
+
+EXTERNAL SOURCES:
+  PKHUD:
+    :git: https://github.com/toyship/PKHUD.git
+
+CHECKOUT OPTIONS:
+  PKHUD:
+    :commit: 28fb970b41d63134e962f9da766b96670c0f55f0
+    :git: https://github.com/toyship/PKHUD.git
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PKHUD: 001c11518f125a273ddf026bcc64918423744ea2
+  R.swift: 5a8b4a4ea565b0f20c39d8ce1445f3d3a9064768
+  R.swift.Library: 0869d8d546517aa79db078fd8262724391a38db8
+  SnapKit: f818b8326d45b4e1c777d0ab27b5c0a3624bfdeb
+  SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
+
+PODFILE CHECKSUM: 9ddd4f43453fa993dd5fdcecafaf0fe0ea232683
+
+COCOAPODS: 1.0.1
