@@ -22,13 +22,19 @@ class ObjectDetailViewController: UIViewController {
     
     @IBAction func `switch`(_ sender: UISwitch) {
         if sender.isOn{
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: [], animations: { 
+            ServiceProxy.setLightBright(lightID: "1", brightness: 100, completeHandle: { 
+                
+            })
+            UIView.animate(withDuration: 1, delay: 0.5, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: [], animations: {
                 self.icon.alpha = 1
                 }, completion: { (bool) in
                     
             })
         }else{
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.0, initialSpringVelocity: 0, options: [], animations: {
+            ServiceProxy.setLightBright(lightID: "1", brightness: 0, completeHandle: {
+                
+            })
+            UIView.animate(withDuration: 1, delay: 0.5, usingSpringWithDamping: 0.0, initialSpringVelocity: 0, options: [], animations: {
                 self.icon.alpha = 0
                 }, completion: { (bool) in
                     

@@ -20,6 +20,10 @@ class ServiceProxy{
     fileprivate static func getPhotoUpdate() -> String {
         return ServiceEndpointBase + "emotion"
     }
+    
+    fileprivate static func getControlLight() -> String {
+        return ServiceEndpointBase + "control-light"
+    }
     //    =======================================
     //    <<          调整灯泡亮度💡             >>
     //    =======================================
@@ -46,9 +50,9 @@ class ServiceProxy{
         }
     }
     
-    internal static func setLightOn(lightID:String,completeHandle:()->Void){
-        HttpClient.invoke(url: "", parameters: [:]) { (data, error) in
-            
+    internal static func setLightBright(lightID:String,brightness:Double,completeHandle:()->Void){
+        HttpClient.invoke(url: getControlLight(), parameters: ["id":lightID,"brightness":brightness]) { (data, error) in
+            print(data)
         }
     }
     
