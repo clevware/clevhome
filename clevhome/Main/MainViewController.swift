@@ -39,10 +39,10 @@ class MainTabbarController: UITabBarController {
             return viewController
         }
         
-        let color = [NSForegroundColorAttributeName:UIColor.white]
-        let indexViewController = configViewController(R.storyboard.index(), title: "设备", attr: color, image: nil, selectedImage: nil)
+        let color = [NSForegroundColorAttributeName:UIColor.blue]
+        let indexViewController = configViewController(R.storyboard.index(), title: "设备", attr: color, image: R.image.electrical(), selectedImage: R.image.electrical_filled())
         
-        let searchViewController = configViewController(R.storyboard.control(), title: "控制", attr: color, image: nil, selectedImage: nil)
+        let searchViewController = configViewController(R.storyboard.control(), title: "控制", attr: color, image: R.image.microphone(), selectedImage: R.image.microphone_filled())
         
         let mineViewController = configViewController(R.storyboard.account(), title: "账号", attr: color, image: nil, selectedImage: nil)
         

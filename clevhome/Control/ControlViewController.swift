@@ -15,7 +15,8 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var progress: UIProgressView!
     
-    
+    @IBOutlet weak var mic_btn: UIButton!
+    var isRecording:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +42,10 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
      */
     
     func getRecordingSetting()->[String : Any]{
-        return [AVSampleRateKey : NSNumber(value: Float(44100.0)),//声音采样率
-            AVFormatIDKey : NSNumber(value: Int32(kAudioFormatMPEG4AAC)),//编码格式
-            AVNumberOfChannelsKey : NSNumber(value: 1),//采集音轨
-            AVEncoderAudioQualityKey : NSNumber(value: Int32(AVAudioQuality.high.rawValue))]
+        return [AVSampleRateKey : NSNumber(value: Float(96000.0)),//声音采样率
+            AVFormatIDKey : NSNumber(value: kAudioFormatMPEG4AAC),//编码格式
+            AVNumberOfChannelsKey : NSNumber(value: 2),//采集音轨
+            AVEncoderAudioQualityKey : NSNumber(value: AVAudioQuality.max.rawValue)]
     }
     @IBAction func takePhoto(_ sender: UIButton) {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
@@ -67,61 +68,13 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let editedImg: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-//            let sizeChange = CGSize(width: 120,height: 90)
-//            UIGraphicsBeginImageContextWithOptions(sizeChange, false, 0.0)
-            
-            // 修改图片长和宽
-            
-            //editedImg?.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
-            
-            // 生成新图片
-            
-            //imageDate = UIGraphicsGetImageFromCurrentImageContext()
-            
-            // 关闭图片编辑模式
-            
-            //UIGraphicsEndImageContext()
-        ServiceProxy.uploadImage(img: UIImageJPEGRepresentation(editedImg, 0.1)!){}
+        ServiceProxy.uploadImage(img: UIImageJPEGRepresentation(editedImg, 0.8)!){}
         
         picker.dismiss(animated: true, completion: nil)
     }
     
     
     
-    @IBAction func startRecord(_ sender: UIButton){
-        let audioSession = AVAudioSession.sharedInstance()
-        do {
-            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            try audioRecorder = AVAudioRecorder(url: createDirectoryURL()!,
-                                                settings: getRecordingSetting())//初始化实例
-            audioRecorder.prepareToRecord()//准备录音
-        } catch {
-            
-        }
-        if !audioRecorder.isRecording {//判断是否正在录音状态
-            let audioSession = AVAudioSession.sharedInstance()
-            do {
-                try audioSession.setActive(true)
-                audioRecorder.record()
-                print("record!")
-            } catch {
-                
-            }
-        }
-    }
-    
-    @IBAction func finishRecord(_ sender: UIButton) {
-        let audioSession = AVAudioSession.sharedInstance()
-        if audioRecorder.isRecording {
-            do {
-                audioRecorder.stop()
-                try audioSession.setActive(false)
-                print("stop!!")
-            } catch {
-                
-            }
-        }
-    }
     
     @IBAction func play(_ sender: UIButton) {
         if (!audioRecorder.isRecording){
@@ -148,7 +101,40 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
         let fileManager = FileManager.default
         let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = urls[0] as URL
-        let soundURL = documentDirectory.appendingPathComponent(recordingName)//将音频文件名称追加在可用路径上形成音频文件的保存路径
+        let soundURL = documentDirectory.appendingPathComponent("command")
+        //let soundURL = documentDirectory.appendingPathComponent(recordingName)//将音频文件名称追加在可用路径上形成音频文件的保存路径
         return soundURL
     }
+    
+    @IBAction func stateChange(_ sender: UIButton) {
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        if isRecording{
+            do {
+                audioRecorder.stop()
+                try audioSession.setActive(false)
+                print("stop!!")
+            } catch {
+                fatalError()
+            }
+            (sender as! AnimateButton).endAnimation()
+            sender.setImage(R.image.mic_off(), for: .normal)
+        }else{
+            do {
+                try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+                try audioRecorder = AVAudioRecorder(url: createDirectoryURL()!,settings: getRecordingSetting())//初始化实例
+                audioRecorder.prepareToRecord()//准备录音
+                try audioSession.setActive(true)
+                audioRecorder.record()
+                print("record!")
+            }
+            catch {
+                fatalError()
+            }
+            (sender as! AnimateButton).beginAnimation()
+            sender.setImage(R.image.mic_on(), for: .normal)
+        }
+        isRecording = !isRecording
+    }
+    
 }

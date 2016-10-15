@@ -26,16 +26,38 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
+    /// Image `electrical_filled`.
+    static let electrical_filled = ImageResource(bundle: _R.hostingBundle, name: "electrical_filled")
+    /// Image `electrical`.
+    static let electrical = ImageResource(bundle: _R.hostingBundle, name: "electrical")
     /// Image `first`.
     static let first = ImageResource(bundle: _R.hostingBundle, name: "first")
     /// Image `light_bright`.
     static let light_bright = ImageResource(bundle: _R.hostingBundle, name: "light_bright")
     /// Image `light_dark`.
     static let light_dark = ImageResource(bundle: _R.hostingBundle, name: "light_dark")
+    /// Image `mic_off`.
+    static let mic_off = ImageResource(bundle: _R.hostingBundle, name: "mic_off")
+    /// Image `mic_on`.
+    static let mic_on = ImageResource(bundle: _R.hostingBundle, name: "mic_on")
+    /// Image `microphone_filled`.
+    static let microphone_filled = ImageResource(bundle: _R.hostingBundle, name: "microphone_filled")
+    /// Image `microphone`.
+    static let microphone = ImageResource(bundle: _R.hostingBundle, name: "microphone")
     /// Image `second`.
     static let second = ImageResource(bundle: _R.hostingBundle, name: "second")
+    
+    /// `UIImage(named: "electrical", bundle: ..., traitCollection: ...)`
+    static func electrical(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.electrical, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "electrical_filled", bundle: ..., traitCollection: ...)`
+    static func electrical_filled(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.electrical_filled, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "first", bundle: ..., traitCollection: ...)`
     static func first(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
@@ -50,6 +72,26 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "light_dark", bundle: ..., traitCollection: ...)`
     static func light_dark(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
       return UIImage(resource: R.image.light_dark, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "mic_off", bundle: ..., traitCollection: ...)`
+    static func mic_off(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.mic_off, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "mic_on", bundle: ..., traitCollection: ...)`
+    static func mic_on(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.mic_on, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "microphone", bundle: ..., traitCollection: ...)`
+    static func microphone(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.microphone, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "microphone_filled", bundle: ..., traitCollection: ...)`
+    static func microphone_filled(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.microphone_filled, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "second", bundle: ..., traitCollection: ...)`
@@ -149,6 +191,7 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try control.validate()
       try index.validate()
     }
     
@@ -161,11 +204,15 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct control: StoryboardResourceWithInitialControllerType {
+    struct control: StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UINavigationController
       
       let bundle = _R.hostingBundle
       let name = "Control"
+      
+      static func validate() throws {
+        if UIImage(named: "mic_off") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mic_off' is used in storyboard 'Control', but couldn't be loaded.") }
+      }
       
       fileprivate init() {}
     }

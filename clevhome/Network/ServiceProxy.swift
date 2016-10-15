@@ -24,6 +24,10 @@ class ServiceProxy{
     fileprivate static func getControlLight() -> String {
         return ServiceEndpointBase + "control-light"
     }
+    
+    fileprivate static func getVoiceRecgnuize() -> String {
+        return ServiceEndpointBase + "control-light"
+    }
     //    =======================================
     //    <<          调整灯泡亮度💡             >>
     //    =======================================
@@ -62,7 +66,12 @@ class ServiceProxy{
             print(response.result.value)
             //complete(response.data,response.result.error)
         }
-
-        
+    }
+    
+    internal static func recognizeVoice(voice:Data,completeHandle:()->Void){
+        Alamofire.upload(voice, to: getVoiceRecgnuize(), method: .post, headers: [:]).responseJSON { (response) in
+            print(response.data!)
+            print(response.result.value)
+        }
     }
 }

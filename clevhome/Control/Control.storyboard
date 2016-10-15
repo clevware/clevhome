@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,6 +44,16 @@
                                 <frame key="frameInset" minX="112" minY="308" width="150" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alU-o7-gU9" customClass="AnimateButton" customModule="clevhome" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="alU-o7-gU9" secondAttribute="height" multiplier="1:1" id="JbG-Qk-vDx"/>
+                                    <constraint firstAttribute="width" constant="122" id="rpU-Zq-BI5"/>
+                                </constraints>
+                                <state key="normal" image="mic_off"/>
+                                <connections>
+                                    <action selector="stateChange:" destination="c77-fs-tYR" eventType="touchUpInside" id="oRe-Fq-pcl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -52,11 +63,14 @@
                             <constraint firstItem="b19-3i-ANP" firstAttribute="top" secondItem="fBq-p5-BHK" secondAttribute="bottom" constant="8" id="aSc-Pk-pu0"/>
                             <constraint firstItem="lYa-PM-dLA" firstAttribute="top" secondItem="fBq-p5-BHK" secondAttribute="bottom" constant="254" id="c9s-sl-qs2"/>
                             <constraint firstItem="muX-ul-Bl6" firstAttribute="top" secondItem="b19-3i-ANP" secondAttribute="bottom" constant="8" id="gSj-Yd-AfH"/>
+                            <constraint firstItem="Lri-o4-0X4" firstAttribute="top" secondItem="alU-o7-gU9" secondAttribute="bottom" constant="17" id="iMD-E4-dLT"/>
                             <constraint firstItem="lYa-PM-dLA" firstAttribute="centerY" secondItem="u5i-Rm-Vgc" secondAttribute="centerY" id="nVx-UK-WO6"/>
+                            <constraint firstItem="alU-o7-gU9" firstAttribute="centerX" secondItem="u5i-Rm-Vgc" secondAttribute="centerX" id="qJk-Nm-Qur"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rEk-O4-Cvj"/>
                     <connections>
+                        <outlet property="mic_btn" destination="alU-o7-gU9" id="QtU-3I-1Ed"/>
                         <outlet property="progress" destination="mKS-Or-K5d" id="Scb-KV-3iG"/>
                     </connections>
                 </viewController>
@@ -83,4 +97,7 @@
             <point key="canvasLocation" x="60" y="-0.44977511244377816"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mic_off" width="122" height="122"/>
+    </resources>
 </document>
