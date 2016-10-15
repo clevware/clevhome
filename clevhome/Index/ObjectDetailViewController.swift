@@ -28,7 +28,7 @@ class ObjectDetailViewController: UIViewController {
                     
             })
         }else{
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: [], animations: {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.0, initialSpringVelocity: 0, options: [], animations: {
                 self.icon.alpha = 0
                 }, completion: { (bool) in
                     

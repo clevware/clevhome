@@ -55,8 +55,8 @@ class MainTabbarController: UITabBarController {
     }
     
     func configTabbar(){
-        UITabBar.appearance().barTintColor = UIColor.darkGray
-        UITabBar.appearance().tintColor = UIColor.white
+        //UITabBar.appearance().barTintColor = UIColor.darkGray
+        //UITabBar.appearance().tintColor = UIColor.white
     }
     
 }

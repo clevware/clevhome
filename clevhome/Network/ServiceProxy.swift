@@ -40,7 +40,19 @@ class ServiceProxy{
 //        }
 //    }
     
-    internal static func uploadImage(img:Data){
+    internal static func loadObjectList(token:String,page:Int,completeHandle:([String],Error?)->Void){
+        HttpClient.invoke(url: "", parameters: [:]) { (data, error) in
+            
+        }
+    }
+    
+    internal static func setLightOn(lightID:String,completeHandle:()->Void){
+        HttpClient.invoke(url: "", parameters: [:]) { (data, error) in
+            
+        }
+    }
+    
+    internal static func uploadImage(img:Data,completeHandle:()->Void){
         Alamofire.upload(img, to: getPhotoUpdate(), method: .post, headers: [:]).responseJSON { (response) in
             print(response.result.value)
             //complete(response.data,response.result.error)

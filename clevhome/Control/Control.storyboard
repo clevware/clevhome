@@ -29,19 +29,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="语音"/>
                                 <connections>
-                                    <action selector="voiceControl:" destination="c77-fs-tYR" eventType="touchUpInside" id="5Rr-P3-fIe"/>
+                                    <action selector="finishRecord:" destination="c77-fs-tYR" eventType="touchDragOutside" id="1zT-PV-Oln"/>
+                                    <action selector="startRecord:" destination="c77-fs-tYR" eventType="touchDown" id="QS9-yu-i4z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYa-PM-dLA">
+                                <state key="normal" title="播放"/>
+                                <connections>
+                                    <action selector="play:" destination="c77-fs-tYR" eventType="touchUpInside" id="gNC-vQ-IwE"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mKS-Or-K5d">
+                                <frame key="frameInset" minX="112" minY="308" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lYa-PM-dLA" firstAttribute="centerX" secondItem="u5i-Rm-Vgc" secondAttribute="centerX" id="0zl-l9-Hs2"/>
                             <constraint firstItem="muX-ul-Bl6" firstAttribute="centerX" secondItem="b19-3i-ANP" secondAttribute="centerX" id="6hf-BV-a1d"/>
                             <constraint firstItem="b19-3i-ANP" firstAttribute="centerX" secondItem="u5i-Rm-Vgc" secondAttribute="centerX" id="Mw5-2c-xxd"/>
                             <constraint firstItem="b19-3i-ANP" firstAttribute="top" secondItem="fBq-p5-BHK" secondAttribute="bottom" constant="8" id="aSc-Pk-pu0"/>
+                            <constraint firstItem="lYa-PM-dLA" firstAttribute="top" secondItem="fBq-p5-BHK" secondAttribute="bottom" constant="254" id="c9s-sl-qs2"/>
                             <constraint firstItem="muX-ul-Bl6" firstAttribute="top" secondItem="b19-3i-ANP" secondAttribute="bottom" constant="8" id="gSj-Yd-AfH"/>
+                            <constraint firstItem="lYa-PM-dLA" firstAttribute="centerY" secondItem="u5i-Rm-Vgc" secondAttribute="centerY" id="nVx-UK-WO6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rEk-O4-Cvj"/>
+                    <connections>
+                        <outlet property="progress" destination="mKS-Or-K5d" id="Scb-KV-3iG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mg-hE-mqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
