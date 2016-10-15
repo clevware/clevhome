@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		358BCFA61DB25E170007BF2F /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BCFA51DB25E170007BF2F /* Audio.swift */; };
+		358BCFA81DB25E220007BF2F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358BCFA71DB25E220007BF2F /* Image.swift */; };
 		3592BA4B1DB17582009D9F43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3592BA4A1DB17582009D9F43 /* AppDelegate.swift */; };
 		3592BA4D1DB17582009D9F43 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3592BA4C1DB17582009D9F43 /* IndexViewController.swift */; };
 		3592BA4F1DB17582009D9F43 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3592BA4E1DB17582009D9F43 /* SecondViewController.swift */; };
@@ -26,12 +28,15 @@
 		35CB0D651DB1842600A44D32 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D641DB1842600A44D32 /* IndexTableViewCell.swift */; };
 		35CB0D681DB1867B00A44D32 /* ObjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D671DB1867B00A44D32 /* ObjectDetailViewController.swift */; };
 		35CB0D6A1DB190DC00A44D32 /* UIVIewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D691DB190DC00A44D32 /* UIVIewController+Extension.swift */; };
+		35DAF7651DB2653E00A7D6E4 /* ImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DAF7641DB2653E00A7D6E4 /* ImageTest.swift */; };
 		35E189AA1DB2232C007E5624 /* AnimateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E189A91DB2232C007E5624 /* AnimateButton.swift */; };
 		35E2D4141DB253C600E8E543 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E2D4131DB253C600E8E543 /* Device.swift */; };
 		B1EFA64C3934BA274D5ED748 /* Pods_clevhome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12A791AB0479F2C682797C5 /* Pods_clevhome.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		358BCFA51DB25E170007BF2F /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Audio.swift; path = Control/Audio.swift; sourceTree = "<group>"; };
+		358BCFA71DB25E220007BF2F /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Control/Image.swift; sourceTree = "<group>"; };
 		3592BA471DB17582009D9F43 /* clevhome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clevhome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3592BA4A1DB17582009D9F43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3592BA4C1DB17582009D9F43 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 		35CB0D641DB1842600A44D32 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndexTableViewCell.swift; path = Index/IndexTableViewCell.swift; sourceTree = "<group>"; };
 		35CB0D671DB1867B00A44D32 /* ObjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectDetailViewController.swift; path = Index/ObjectDetailViewController.swift; sourceTree = "<group>"; };
 		35CB0D691DB190DC00A44D32 /* UIVIewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extension.swift"; sourceTree = "<group>"; };
+		35DAF7641DB2653E00A7D6E4 /* ImageTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTest.swift; path = Network/ImageTest.swift; sourceTree = "<group>"; };
 		35E189A91DB2232C007E5624 /* AnimateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimateButton.swift; path = Control/AnimateButton.swift; sourceTree = "<group>"; };
 		35E2D4131DB253C600E8E543 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Model/Device.swift; sourceTree = "<group>"; };
 		A12A791AB0479F2C682797C5 /* Pods_clevhome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clevhome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +151,7 @@
 			children = (
 				35CB0D4F1DB17D7C00A44D32 /* HttpClient.swift */,
 				35CB0D511DB17DD500A44D32 /* ServiceProxy.swift */,
+				35DAF7641DB2653E00A7D6E4 /* ImageTest.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -163,6 +170,8 @@
 				35CB0D5A1DB1811600A44D32 /* ControlViewController.swift */,
 				35CB0D5E1DB1815700A44D32 /* Control.storyboard */,
 				35E189A91DB2232C007E5624 /* AnimateButton.swift */,
+				358BCFA51DB25E170007BF2F /* Audio.swift */,
+				358BCFA71DB25E220007BF2F /* Image.swift */,
 			);
 			name = control;
 			sourceTree = "<group>";
@@ -350,8 +359,11 @@
 				35CB0D651DB1842600A44D32 /* IndexTableViewCell.swift in Sources */,
 				35CB0D501DB17D7C00A44D32 /* HttpClient.swift in Sources */,
 				3592BA4F1DB17582009D9F43 /* SecondViewController.swift in Sources */,
+				358BCFA61DB25E170007BF2F /* Audio.swift in Sources */,
+				35DAF7651DB2653E00A7D6E4 /* ImageTest.swift in Sources */,
 				3592BA4B1DB17582009D9F43 /* AppDelegate.swift in Sources */,
 				35E2D4141DB253C600E8E543 /* Device.swift in Sources */,
+				358BCFA81DB25E220007BF2F /* Image.swift in Sources */,
 				3592BA4D1DB17582009D9F43 /* IndexViewController.swift in Sources */,
 				35CB0D521DB17DD500A44D32 /* ServiceProxy.swift in Sources */,
 				35B720B21DB177DD00F5C10F /* R.generated.swift in Sources */,

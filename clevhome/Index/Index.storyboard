@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pVW-Sy-kay">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -138,7 +136,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_dark" translatesAutoresizingMaskIntoConstraints="NO" id="z6P-q2-9OL"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_bright" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-ig-LZe">
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="gzs-ig-LZe" secondAttribute="height" multiplier="1:1" id="8Z9-QG-ihO"/>
                                     <constraint firstAttribute="width" constant="64" id="chB-Yb-YgM"/>
                                 </constraints>
                             </imageView>

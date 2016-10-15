@@ -13,9 +13,10 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
     var audioRecorder:AVAudioRecorder!
     var audioPlayer:AVAudioPlayer!
     
-    @IBOutlet weak var progress: UIProgressView!
-    
     @IBOutlet weak var mic_btn: UIButton!
+    
+    @IBOutlet weak var image: UIImageView!
+    
     var isRecording:Bool = false
     
     override func viewDidLoad() {
@@ -48,7 +49,7 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
             AVEncoderAudioQualityKey : NSNumber(value: AVAudioQuality.max.rawValue)]
     }
     @IBAction func takePhoto(_ sender: UIButton) {
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
             //self?.alertCanNotOpenCamera()
             alertMessage(title: "错误", msg: "摄像头无法启用")
             return
@@ -59,7 +60,7 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
         //允许编辑
         imagePicker.allowsEditing=false
         //设置图片源
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         //模态弹出IamgePickerView
         self.present(imagePicker, animated: true, completion: nil)
     }
@@ -68,11 +69,12 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let editedImg: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        image.image = editedImg
+        ServiceProxy.uploadImage(img: UIImagePNGRepresentation(editedImg)!){}
         ServiceProxy.uploadImage(img: UIImageJPEGRepresentation(editedImg, 0.8)!){}
         
         picker.dismiss(animated: true, completion: nil)
     }
-    
     
     
     

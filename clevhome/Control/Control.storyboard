@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ghc-vo-bCs">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,24 +25,6 @@
                                     <action selector="takePhoto:" destination="c77-fs-tYR" eventType="touchUpInside" id="5Fo-aV-2ER"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muX-ul-Bl6">
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="语音"/>
-                                <connections>
-                                    <action selector="finishRecord:" destination="c77-fs-tYR" eventType="touchDragOutside" id="1zT-PV-Oln"/>
-                                    <action selector="startRecord:" destination="c77-fs-tYR" eventType="touchDown" id="QS9-yu-i4z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYa-PM-dLA">
-                                <state key="normal" title="播放"/>
-                                <connections>
-                                    <action selector="play:" destination="c77-fs-tYR" eventType="touchUpInside" id="gNC-vQ-IwE"/>
-                                </connections>
-                            </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mKS-Or-K5d">
-                                <frame key="frameInset" minX="112" minY="308" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alU-o7-gU9" customClass="AnimateButton" customModule="clevhome" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="alU-o7-gU9" secondAttribute="height" multiplier="1:1" id="JbG-Qk-vDx"/>
@@ -54,24 +35,32 @@
                                     <action selector="stateChange:" destination="c77-fs-tYR" eventType="touchUpInside" id="oRe-Fq-pcl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYa-PM-dLA">
+                                <state key="normal" title="播放"/>
+                                <connections>
+                                    <action selector="play:" destination="c77-fs-tYR" eventType="touchUpInside" id="gNC-vQ-IwE"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bla-Md-IsW"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lYa-PM-dLA" firstAttribute="centerX" secondItem="u5i-Rm-Vgc" secondAttribute="centerX" id="0zl-l9-Hs2"/>
-                            <constraint firstItem="muX-ul-Bl6" firstAttribute="centerX" secondItem="b19-3i-ANP" secondAttribute="centerX" id="6hf-BV-a1d"/>
+                            <constraint firstItem="lYa-PM-dLA" firstAttribute="centerX" secondItem="alU-o7-gU9" secondAttribute="centerX" id="0aP-95-eA6"/>
+                            <constraint firstItem="lYa-PM-dLA" firstAttribute="top" secondItem="bla-Md-IsW" secondAttribute="bottom" constant="8" id="B1A-Fa-URS"/>
                             <constraint firstItem="b19-3i-ANP" firstAttribute="centerX" secondItem="u5i-Rm-Vgc" secondAttribute="centerX" id="Mw5-2c-xxd"/>
+                            <constraint firstItem="bla-Md-IsW" firstAttribute="top" secondItem="b19-3i-ANP" secondAttribute="bottom" constant="8" id="Nf9-qF-YaP"/>
+                            <constraint firstItem="alU-o7-gU9" firstAttribute="top" secondItem="lYa-PM-dLA" secondAttribute="bottom" constant="8" id="Nj3-Wh-O4m"/>
                             <constraint firstItem="b19-3i-ANP" firstAttribute="top" secondItem="fBq-p5-BHK" secondAttribute="bottom" constant="8" id="aSc-Pk-pu0"/>
-                            <constraint firstItem="lYa-PM-dLA" firstAttribute="top" secondItem="fBq-p5-BHK" secondAttribute="bottom" constant="254" id="c9s-sl-qs2"/>
-                            <constraint firstItem="muX-ul-Bl6" firstAttribute="top" secondItem="b19-3i-ANP" secondAttribute="bottom" constant="8" id="gSj-Yd-AfH"/>
+                            <constraint firstAttribute="trailing" secondItem="bla-Md-IsW" secondAttribute="trailing" id="f88-Mp-uzZ"/>
                             <constraint firstItem="Lri-o4-0X4" firstAttribute="top" secondItem="alU-o7-gU9" secondAttribute="bottom" constant="17" id="iMD-E4-dLT"/>
-                            <constraint firstItem="lYa-PM-dLA" firstAttribute="centerY" secondItem="u5i-Rm-Vgc" secondAttribute="centerY" id="nVx-UK-WO6"/>
                             <constraint firstItem="alU-o7-gU9" firstAttribute="centerX" secondItem="u5i-Rm-Vgc" secondAttribute="centerX" id="qJk-Nm-Qur"/>
+                            <constraint firstItem="bla-Md-IsW" firstAttribute="leading" secondItem="u5i-Rm-Vgc" secondAttribute="leading" id="tEP-ta-AHO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rEk-O4-Cvj"/>
                     <connections>
+                        <outlet property="image" destination="bla-Md-IsW" id="vDH-FP-wiG"/>
                         <outlet property="mic_btn" destination="alU-o7-gU9" id="QtU-3I-1Ed"/>
-                        <outlet property="progress" destination="mKS-Or-K5d" id="Scb-KV-3iG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mg-hE-mqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
