@@ -67,9 +67,23 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let editedImg: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        DispatchQueue(label: "work").async {
-            ServiceProxy.uploadImage(img: UIImagePNGRepresentation(editedImg)!){}
-        }
+//            let sizeChange = CGSize(width: 120,height: 90)
+//            UIGraphicsBeginImageContextWithOptions(sizeChange, false, 0.0)
+            
+            // 修改图片长和宽
+            
+            //editedImg?.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+            
+            // 生成新图片
+            
+            //imageDate = UIGraphicsGetImageFromCurrentImageContext()
+            
+            // 关闭图片编辑模式
+            
+            //UIGraphicsEndImageContext()
+        ServiceProxy.uploadImage(img: UIImageJPEGRepresentation(editedImg, 0.1)!){}
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
     

@@ -13,12 +13,12 @@ import SwiftyJSON
 class ServiceProxy{
     // MARK: -URL
     fileprivate static var ServiceEndpointBase : String {
-        return "http://cleverhome.mybluemix.net"
+        return "http://cleverhome.mybluemix.net/"
     }
     //图片上传
 
     fileprivate static func getPhotoUpdate() -> String {
-        return ServiceEndpointBase + "photo"
+        return ServiceEndpointBase + "emotion"
     }
     //    =======================================
     //    <<          调整灯泡亮度💡             >>
@@ -54,6 +54,7 @@ class ServiceProxy{
     
     internal static func uploadImage(img:Data,completeHandle:()->Void){
         Alamofire.upload(img, to: getPhotoUpdate(), method: .post, headers: [:]).responseJSON { (response) in
+            print(response.data!)
             print(response.result.value)
             //complete(response.data,response.result.error)
         }
