@@ -13,6 +13,7 @@ pod 'Kingfisher'                # Kingfisher图片缓存库
 pod 'MJRefresh'                 # 上拉\下拉刷新
 pod 'PKHUD', :git => 'https://github.com/toyship/PKHUD.git' # HUD
 pod 'R.swift'
+pod 'Proposer'
   # Pods for clevhome
 
 end

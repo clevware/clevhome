@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Proposer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>R.swift.Library.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +52,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0F8B0496254B3C8B4E1B70AC8652B0E3</key>
+		<key>0E9E087DFF48DDDE8FCA271497FA0D5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,27 +62,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>250AB5D65C03DB8E89922D9439F99472</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>29DD99664D189A7CA206368F493B1E0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>36308E37B748A3043C3C719737EB01B8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3A8A1F24E79984C0905B89D39597531F</key>
+		<key>37344EA6E2817AE57B60C89E4FFDD152</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>860A0C0C0A752CE43257D242ADDE7621</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBDCD89F4D0C11388786B3E0394E0178</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E421910081873B89DE6B27E21C2C7039</key>
 		<dict>
 			<key>primary</key>
 			<true/>

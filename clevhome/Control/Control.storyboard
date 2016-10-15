@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ghc-vo-bCs">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Control View Controller-->
+        <scene sceneID="w0a-2U-Xrh">
+            <objects>
+                <viewController id="c77-fs-tYR" customClass="ControlViewController" customModule="clevhome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fBq-p5-BHK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lri-o4-0X4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u5i-Rm-Vgc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b19-3i-ANP">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="c77-fs-tYR" eventType="touchUpInside" id="5Fo-aV-2ER"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muX-ul-Bl6">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="语音"/>
+                                <connections>
+                                    <action selector="voiceControl:" destination="c77-fs-tYR" eventType="touchUpInside" id="5Rr-P3-fIe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="muX-ul-Bl6" firstAttribute="centerX" secondItem="b19-3i-ANP" secondAttribute="centerX" id="6hf-BV-a1d"/>
+                            <constraint firstItem="b19-3i-ANP" firstAttribute="centerX" secondItem="u5i-Rm-Vgc" secondAttribute="centerX" id="Mw5-2c-xxd"/>
+                            <constraint firstItem="b19-3i-ANP" firstAttribute="top" secondItem="fBq-p5-BHK" secondAttribute="bottom" constant="8" id="aSc-Pk-pu0"/>
+                            <constraint firstItem="muX-ul-Bl6" firstAttribute="top" secondItem="b19-3i-ANP" secondAttribute="bottom" constant="8" id="gSj-Yd-AfH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rEk-O4-Cvj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5mg-hE-mqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999.20000000000005" y="-0.44977511244377816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oYn-UV-Ute">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ghc-vo-bCs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="46v-s4-hmg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="c77-fs-tYR" kind="relationship" relationship="rootViewController" id="oDQ-Se-8WF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dup-BA-hPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="-0.44977511244377816"/>
+        </scene>
+    </scenes>
+</document>

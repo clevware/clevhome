@@ -26,16 +26,30 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
     /// Image `first`.
     static let first = ImageResource(bundle: _R.hostingBundle, name: "first")
+    /// Image `light_bright`.
+    static let light_bright = ImageResource(bundle: _R.hostingBundle, name: "light_bright")
+    /// Image `light_dark`.
+    static let light_dark = ImageResource(bundle: _R.hostingBundle, name: "light_dark")
     /// Image `second`.
     static let second = ImageResource(bundle: _R.hostingBundle, name: "second")
     
     /// `UIImage(named: "first", bundle: ..., traitCollection: ...)`
     static func first(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
       return UIImage(resource: R.image.first, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "light_bright", bundle: ..., traitCollection: ...)`
+    static func light_bright(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.light_bright, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "light_dark", bundle: ..., traitCollection: ...)`
+    static func light_dark(compatibleWith traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.light_dark, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "second", bundle: ..., traitCollection: ...)`
@@ -59,8 +73,11 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `indexCell`.
+    static let indexCell: ReuseIdentifier<IndexTableViewCell> = ReuseIdentifier(identifier: "indexCell")
+    
     fileprivate init() {}
   }
   
@@ -69,12 +86,33 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
+    /// Storyboard `Account`.
+    static let account = _R.storyboard.account()
+    /// Storyboard `Control`.
+    static let control = _R.storyboard.control()
+    /// Storyboard `Index`.
+    static let index = _R.storyboard.index()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    
+    /// `UIStoryboard(name: "Account", bundle: ...)`
+    static func account(_: Void = ()) -> UIStoryboard {
+      return UIStoryboard(resource: R.storyboard.account)
+    }
+    
+    /// `UIStoryboard(name: "Control", bundle: ...)`
+    static func control(_: Void = ()) -> UIStoryboard {
+      return UIStoryboard(resource: R.storyboard.control)
+    }
+    
+    /// `UIStoryboard(name: "Index", bundle: ...)`
+    static func index(_: Void = ()) -> UIStoryboard {
+      return UIStoryboard(resource: R.storyboard.index)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIStoryboard {
@@ -111,7 +149,39 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try main.validate()
+      try index.validate()
+    }
+    
+    struct account: StoryboardResourceWithInitialControllerType {
+      typealias InitialController = UINavigationController
+      
+      let bundle = _R.hostingBundle
+      let name = "Account"
+      
+      fileprivate init() {}
+    }
+    
+    struct control: StoryboardResourceWithInitialControllerType {
+      typealias InitialController = UINavigationController
+      
+      let bundle = _R.hostingBundle
+      let name = "Control"
+      
+      fileprivate init() {}
+    }
+    
+    struct index: StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UINavigationController
+      
+      let bundle = _R.hostingBundle
+      let name = "Index"
+      
+      static func validate() throws {
+        if UIImage(named: "light_dark") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'light_dark' is used in storyboard 'Index', but couldn't be loaded.") }
+        if UIImage(named: "light_bright") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'light_bright' is used in storyboard 'Index', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct launchScreen: StoryboardResourceWithInitialControllerType {
@@ -123,16 +193,11 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct main: StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UITabBarController
+    struct main: StoryboardResourceWithInitialControllerType {
+      typealias InitialController = MainTabbarController
       
       let bundle = _R.hostingBundle
       let name = "Main"
-      
-      static func validate() throws {
-        if UIImage(named: "first") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'first' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIImage(named: "second") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'second' is used in storyboard 'Main', but couldn't be loaded.") }
-      }
       
       fileprivate init() {}
     }

@@ -8,25 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		3592BA4B1DB17582009D9F43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3592BA4A1DB17582009D9F43 /* AppDelegate.swift */; };
-		3592BA4D1DB17582009D9F43 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3592BA4C1DB17582009D9F43 /* FirstViewController.swift */; };
+		3592BA4D1DB17582009D9F43 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3592BA4C1DB17582009D9F43 /* IndexViewController.swift */; };
 		3592BA4F1DB17582009D9F43 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3592BA4E1DB17582009D9F43 /* SecondViewController.swift */; };
 		3592BA521DB17582009D9F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3592BA501DB17582009D9F43 /* Main.storyboard */; };
 		3592BA541DB17582009D9F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3592BA531DB17582009D9F43 /* Assets.xcassets */; };
 		3592BA571DB17582009D9F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3592BA551DB17582009D9F43 /* LaunchScreen.storyboard */; };
 		35B720B21DB177DD00F5C10F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B720B11DB177DD00F5C10F /* R.generated.swift */; };
+		35CB0D501DB17D7C00A44D32 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D4F1DB17D7C00A44D32 /* HttpClient.swift */; };
+		35CB0D521DB17DD500A44D32 /* ServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D511DB17DD500A44D32 /* ServiceProxy.swift */; };
+		35CB0D551DB17F3700A44D32 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D541DB17F3700A44D32 /* MainViewController.swift */; };
+		35CB0D571DB180AA00A44D32 /* Index.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CB0D561DB180AA00A44D32 /* Index.storyboard */; };
+		35CB0D5B1DB1811600A44D32 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D5A1DB1811600A44D32 /* ControlViewController.swift */; };
+		35CB0D5D1DB1814500A44D32 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CB0D5C1DB1814500A44D32 /* Account.storyboard */; };
+		35CB0D5F1DB1815700A44D32 /* Control.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CB0D5E1DB1815700A44D32 /* Control.storyboard */; };
+		35CB0D611DB1816C00A44D32 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D601DB1816C00A44D32 /* AccountViewController.swift */; };
+		35CB0D631DB1840B00A44D32 /* IndexTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D621DB1840B00A44D32 /* IndexTableViewDelegate.swift */; };
+		35CB0D651DB1842600A44D32 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D641DB1842600A44D32 /* IndexTableViewCell.swift */; };
+		35CB0D681DB1867B00A44D32 /* ObjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D671DB1867B00A44D32 /* ObjectDetailViewController.swift */; };
+		35CB0D6A1DB190DC00A44D32 /* UIVIewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D691DB190DC00A44D32 /* UIVIewController+Extension.swift */; };
 		B1EFA64C3934BA274D5ED748 /* Pods_clevhome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12A791AB0479F2C682797C5 /* Pods_clevhome.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3592BA471DB17582009D9F43 /* clevhome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clevhome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3592BA4A1DB17582009D9F43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3592BA4C1DB17582009D9F43 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		3592BA4C1DB17582009D9F43 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		3592BA4E1DB17582009D9F43 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3592BA511DB17582009D9F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3592BA531DB17582009D9F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3592BA561DB17582009D9F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3592BA581DB17582009D9F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35B720B11DB177DD00F5C10F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		35CB0D4F1DB17D7C00A44D32 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpClient.swift; path = Network/HttpClient.swift; sourceTree = "<group>"; };
+		35CB0D511DB17DD500A44D32 /* ServiceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceProxy.swift; path = Network/ServiceProxy.swift; sourceTree = "<group>"; };
+		35CB0D541DB17F3700A44D32 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Main/MainViewController.swift; sourceTree = "<group>"; };
+		35CB0D561DB180AA00A44D32 /* Index.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Index.storyboard; path = Index/Index.storyboard; sourceTree = "<group>"; };
+		35CB0D5A1DB1811600A44D32 /* ControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControlViewController.swift; path = Control/ControlViewController.swift; sourceTree = "<group>"; };
+		35CB0D5C1DB1814500A44D32 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Account.storyboard; path = Account/Account.storyboard; sourceTree = "<group>"; };
+		35CB0D5E1DB1815700A44D32 /* Control.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Control.storyboard; path = Control/Control.storyboard; sourceTree = "<group>"; };
+		35CB0D601DB1816C00A44D32 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = Account/AccountViewController.swift; sourceTree = "<group>"; };
+		35CB0D621DB1840B00A44D32 /* IndexTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndexTableViewDelegate.swift; path = Index/IndexTableViewDelegate.swift; sourceTree = "<group>"; };
+		35CB0D641DB1842600A44D32 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndexTableViewCell.swift; path = Index/IndexTableViewCell.swift; sourceTree = "<group>"; };
+		35CB0D671DB1867B00A44D32 /* ObjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectDetailViewController.swift; path = Index/ObjectDetailViewController.swift; sourceTree = "<group>"; };
+		35CB0D691DB190DC00A44D32 /* UIVIewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extension.swift"; sourceTree = "<group>"; };
 		A12A791AB0479F2C682797C5 /* Pods_clevhome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clevhome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83DF3DFE7FAB2755AF518DC /* Pods-clevhome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clevhome.release.xcconfig"; path = "Pods/Target Support Files/Pods-clevhome/Pods-clevhome.release.xcconfig"; sourceTree = "<group>"; };
 		F0CA5017E15D5CC4C1B5395E /* Pods-clevhome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clevhome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-clevhome/Pods-clevhome.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,24 +98,84 @@
 		3592BA491DB17582009D9F43 /* clevhome */ = {
 			isa = PBXGroup;
 			children = (
-				35B720B01DB177AD00F5C10F /* New Group */,
+				35B720B01DB177AD00F5C10F /* Tools */,
+				35CB0D4E1DB17D6600A44D32 /* Network */,
+				35CB0D531DB17F1300A44D32 /* Main */,
+				35CB0D4D1DB17D0D00A44D32 /* Index */,
+				35CB0D581DB180DF00A44D32 /* control */,
+				35CB0D591DB180EB00A44D32 /* account */,
 				3592BA4A1DB17582009D9F43 /* AppDelegate.swift */,
-				3592BA4C1DB17582009D9F43 /* FirstViewController.swift */,
 				3592BA4E1DB17582009D9F43 /* SecondViewController.swift */,
 				3592BA501DB17582009D9F43 /* Main.storyboard */,
 				3592BA531DB17582009D9F43 /* Assets.xcassets */,
 				3592BA551DB17582009D9F43 /* LaunchScreen.storyboard */,
 				3592BA581DB17582009D9F43 /* Info.plist */,
+				35CB0D691DB190DC00A44D32 /* UIVIewController+Extension.swift */,
 			);
 			path = clevhome;
 			sourceTree = "<group>";
 		};
-		35B720B01DB177AD00F5C10F /* New Group */ = {
+		35B720B01DB177AD00F5C10F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				35B720B11DB177DD00F5C10F /* R.generated.swift */,
 			);
-			name = "New Group";
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		35CB0D4D1DB17D0D00A44D32 /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				3592BA4C1DB17582009D9F43 /* IndexViewController.swift */,
+				35CB0D641DB1842600A44D32 /* IndexTableViewCell.swift */,
+				35CB0D561DB180AA00A44D32 /* Index.storyboard */,
+				35CB0D621DB1840B00A44D32 /* IndexTableViewDelegate.swift */,
+				35CB0D661DB1863F00A44D32 /* ObjectDetail */,
+			);
+			name = Index;
+			sourceTree = "<group>";
+		};
+		35CB0D4E1DB17D6600A44D32 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				35CB0D4F1DB17D7C00A44D32 /* HttpClient.swift */,
+				35CB0D511DB17DD500A44D32 /* ServiceProxy.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		35CB0D531DB17F1300A44D32 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				35CB0D541DB17F3700A44D32 /* MainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		35CB0D581DB180DF00A44D32 /* control */ = {
+			isa = PBXGroup;
+			children = (
+				35CB0D5A1DB1811600A44D32 /* ControlViewController.swift */,
+				35CB0D5E1DB1815700A44D32 /* Control.storyboard */,
+			);
+			name = control;
+			sourceTree = "<group>";
+		};
+		35CB0D591DB180EB00A44D32 /* account */ = {
+			isa = PBXGroup;
+			children = (
+				35CB0D5C1DB1814500A44D32 /* Account.storyboard */,
+				35CB0D601DB1816C00A44D32 /* AccountViewController.swift */,
+			);
+			name = account;
+			sourceTree = "<group>";
+		};
+		35CB0D661DB1863F00A44D32 /* ObjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				35CB0D671DB1867B00A44D32 /* ObjectDetailViewController.swift */,
+			);
+			name = ObjectDetail;
 			sourceTree = "<group>";
 		};
 		A6EEA0B3038D54BCB8C45CE0 /* Frameworks */ = {
@@ -109,8 +193,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3592BA5B1DB17582009D9F43 /* Build configuration list for PBXNativeTarget "clevhome" */;
 			buildPhases = (
-				35B720AF1DB1773C00F5C10F /* R.swift */,
 				41C2BA6DE7AFB3FA7A0B5F11 /* [CP] Check Pods Manifest.lock */,
+				35B720AF1DB1773C00F5C10F /* R.swift */,
 				3592BA431DB17581009D9F43 /* Sources */,
 				3592BA441DB17581009D9F43 /* Frameworks */,
 				3592BA451DB17581009D9F43 /* Resources */,
@@ -138,6 +222,7 @@
 				TargetAttributes = {
 					3592BA461DB17581009D9F43 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 93UBSK8PYK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -165,9 +250,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CB0D5F1DB1815700A44D32 /* Control.storyboard in Resources */,
 				3592BA571DB17582009D9F43 /* LaunchScreen.storyboard in Resources */,
 				3592BA541DB17582009D9F43 /* Assets.xcassets in Resources */,
+				35CB0D5D1DB1814500A44D32 /* Account.storyboard in Resources */,
 				3592BA521DB17582009D9F43 /* Main.storyboard in Resources */,
+				35CB0D571DB180AA00A44D32 /* Index.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,10 +328,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CB0D6A1DB190DC00A44D32 /* UIVIewController+Extension.swift in Sources */,
+				35CB0D681DB1867B00A44D32 /* ObjectDetailViewController.swift in Sources */,
+				35CB0D551DB17F3700A44D32 /* MainViewController.swift in Sources */,
+				35CB0D631DB1840B00A44D32 /* IndexTableViewDelegate.swift in Sources */,
+				35CB0D651DB1842600A44D32 /* IndexTableViewCell.swift in Sources */,
+				35CB0D501DB17D7C00A44D32 /* HttpClient.swift in Sources */,
 				3592BA4F1DB17582009D9F43 /* SecondViewController.swift in Sources */,
 				3592BA4B1DB17582009D9F43 /* AppDelegate.swift in Sources */,
-				3592BA4D1DB17582009D9F43 /* FirstViewController.swift in Sources */,
+				3592BA4D1DB17582009D9F43 /* IndexViewController.swift in Sources */,
+				35CB0D521DB17DD500A44D32 /* ServiceProxy.swift in Sources */,
 				35B720B21DB177DD00F5C10F /* R.generated.swift in Sources */,
+				35CB0D5B1DB1811600A44D32 /* ControlViewController.swift in Sources */,
+				35CB0D611DB1816C00A44D32 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +462,7 @@
 			baseConfigurationReference = F0CA5017E15D5CC4C1B5395E /* Pods-clevhome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 93UBSK8PYK;
 				INFOPLIST_FILE = clevhome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clevware.clevhome;
@@ -378,6 +476,7 @@
 			baseConfigurationReference = A83DF3DFE7FAB2755AF518DC /* Pods-clevhome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 93UBSK8PYK;
 				INFOPLIST_FILE = clevhome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clevware.clevhome;
