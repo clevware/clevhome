@@ -13,7 +13,7 @@ import SwiftyJSON
 class ServiceProxy{
     // MARK: -URL
     fileprivate static var ServiceEndpointBase : String {
-        return "http://cleverhome.mybluemix.net/" //"http://10.221.64.169:8090"
+        return "https://clevho.mybluemix.net/" //"http://10.221.64.169:8090"
     }
     //图片上传
 
@@ -28,6 +28,17 @@ class ServiceProxy{
     fileprivate static func getVoiceRecgnuize() -> String {
         return ServiceEndpointBase + "control-light"
     }
+    
+    fileprivate static func getSendEmotionURL() -> String {
+        return ServiceEndpointBase + "emotion-json"
+    }
+    fileprivate static func getObjectList() -> String {
+        return ServiceEndpointBase + "all-light-brightness"
+    }
+    
+    
+    
+    
     //    =======================================
     //    <<          调整灯泡亮度💡             >>
     //    =======================================
@@ -48,9 +59,13 @@ class ServiceProxy{
 //        }
 //    }
     
-    internal static func loadObjectList(token:String,page:Int,completeHandle:([String],Error?)->Void){
-        HttpClient.invoke(url: "", parameters: [:]) { (data, error) in
-            
+    internal static func loadObjectList(token:String,page:Int,completeHandle:@escaping ([Device],Error?)->Void){
+        HttpClient.invokePost(url: getObjectList(), parameters: [:]) { (data, error) in
+            let json = try! JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+            let array = (json as! NSDictionary).map({ (id,state) -> Device in
+                Device(id: id as! String,state: state as! Int)
+            })
+            completeHandle(array,error)
         }
     }
     
@@ -61,28 +76,25 @@ class ServiceProxy{
     }
     
     
-    internal static func uploadImage(img:Data,completeHandle:()->Void){
-        
-        getEmotion(from: img) { (data, response) in
-            do{
-                let res = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                print(res)
-            }catch{
-                
-            }
-            
-            
+    internal static func uploadImage(img:Data,completeHandle:(EmotionJSON)->Void){
+
+        EmotionRecognition.getEmotion(from: img) { (data, reponse) in
+            sendEmotionJSON(json: data!)
+            let emotionData = try! JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+            print(emotionData)
         }
-//        EmotionRecognition.getEmotion(from: img) { (data, reponse) in
-//            let res = try! JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-//            print(res)
-//        }
-        
     }
     
-    static func getEmotion(from data: Data, completionHandler: @escaping (Data?, URLResponse?) -> Void) {
+    private static func sendEmotionJSON(json:Data){
+        HttpClient.invoke(url: getSendEmotionURL(), parameters: ["data":json]) { (data, error) in
+            let json = try! JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+            print(json)
+        }
+    }
+    
+    private static func getEmotion(from data: Data, completionHandler: @escaping (Data?, URLResponse?) -> Void) {
         let session = URLSession.shared
-        let url = URL(string: getPhotoUpdate())!
+        let url = URL(string: ERConfig.urlPathStr)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = data

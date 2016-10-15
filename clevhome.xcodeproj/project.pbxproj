@@ -29,6 +29,7 @@
 		35CB0D681DB1867B00A44D32 /* ObjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D671DB1867B00A44D32 /* ObjectDetailViewController.swift */; };
 		35CB0D6A1DB190DC00A44D32 /* UIVIewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D691DB190DC00A44D32 /* UIVIewController+Extension.swift */; };
 		35DAF7651DB2653E00A7D6E4 /* ImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DAF7641DB2653E00A7D6E4 /* ImageTest.swift */; };
+		35DAF7671DB27BEC00A7D6E4 /* EmotionJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DAF7661DB27BEC00A7D6E4 /* EmotionJSON.swift */; };
 		35E189AA1DB2232C007E5624 /* AnimateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E189A91DB2232C007E5624 /* AnimateButton.swift */; };
 		35E2D4141DB253C600E8E543 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E2D4131DB253C600E8E543 /* Device.swift */; };
 		B1EFA64C3934BA274D5ED748 /* Pods_clevhome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12A791AB0479F2C682797C5 /* Pods_clevhome.framework */; };
@@ -59,6 +60,7 @@
 		35CB0D671DB1867B00A44D32 /* ObjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectDetailViewController.swift; path = Index/ObjectDetailViewController.swift; sourceTree = "<group>"; };
 		35CB0D691DB190DC00A44D32 /* UIVIewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extension.swift"; sourceTree = "<group>"; };
 		35DAF7641DB2653E00A7D6E4 /* ImageTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTest.swift; path = Network/ImageTest.swift; sourceTree = "<group>"; };
+		35DAF7661DB27BEC00A7D6E4 /* EmotionJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmotionJSON.swift; path = Model/EmotionJSON.swift; sourceTree = "<group>"; };
 		35E189A91DB2232C007E5624 /* AnimateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimateButton.swift; path = Control/AnimateButton.swift; sourceTree = "<group>"; };
 		35E2D4131DB253C600E8E543 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Model/Device.swift; sourceTree = "<group>"; };
 		A12A791AB0479F2C682797C5 /* Pods_clevhome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clevhome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				35E2D4131DB253C600E8E543 /* Device.swift */,
+				35DAF7661DB27BEC00A7D6E4 /* EmotionJSON.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				35DAF7651DB2653E00A7D6E4 /* ImageTest.swift in Sources */,
 				3592BA4B1DB17582009D9F43 /* AppDelegate.swift in Sources */,
 				35E2D4141DB253C600E8E543 /* Device.swift in Sources */,
+				35DAF7671DB27BEC00A7D6E4 /* EmotionJSON.swift in Sources */,
 				358BCFA81DB25E220007BF2F /* Image.swift in Sources */,
 				3592BA4D1DB17582009D9F43 /* IndexViewController.swift in Sources */,
 				35CB0D521DB17DD500A44D32 /* ServiceProxy.swift in Sources */,
@@ -412,6 +416,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -461,6 +466,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -489,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F0CA5017E15D5CC4C1B5395E /* Pods-clevhome.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 93UBSK8PYK;
 				INFOPLIST_FILE = clevhome/Info.plist;
@@ -504,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A83DF3DFE7FAB2755AF518DC /* Pods-clevhome.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 93UBSK8PYK;
 				INFOPLIST_FILE = clevhome/Info.plist;

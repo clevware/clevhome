@@ -70,8 +70,8 @@ class ControlViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let editedImg: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         image.image = editedImg
-        ServiceProxy.uploadImage(img: UIImagePNGRepresentation(editedImg)!){}
-        ServiceProxy.uploadImage(img: UIImageJPEGRepresentation(editedImg, 0.8)!){}
+        ServiceProxy.uploadImage(img: UIImagePNGRepresentation(editedImg)!){_ in }
+        ServiceProxy.uploadImage(img: UIImageJPEGRepresentation(editedImg, 0.8)!){_ in }
         
         picker.dismiss(animated: true, completion: nil)
     }

@@ -11,14 +11,14 @@ import MJRefresh
 import PKHUD
 class IndexViewController: UIViewController {
     
-    var dataArray = [String]()
+    var dataArray = [Device]()
     var page = 1
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        
+        tableView.delegate = self
         //设置刷新
         let header = MJRefreshNormalHeader(refreshingBlock: {
             self.tableView.mj_header.beginRefreshing()
@@ -58,7 +58,7 @@ class IndexViewController: UIViewController {
             self.dataArray.removeAll()
             tableView.reloadData()
         }
-        ServiceProxy.loadObjectList(token: "", page: page) { (searchResult,error) in
+        ServiceProxy.loadObjectList(token: "", page: page) { (result,error) in
             
             guard error == nil else{
                 self.page = 1
@@ -66,13 +66,13 @@ class IndexViewController: UIViewController {
                 self.dataArray.removeAll()
                 return
             }
-//            if searchResult.searchData.count == 0{
-//                HUD.flash(.labeledError(title: "没有更多信息", subtitle: nil),delay: 1)
-//            }else{
-//                self.page += 1
-//                HUD.flash(.success,delay: 0.3)
-//            }
-//            self.dataArray.append((searchResult.searchData)!)
+            if result.count == 0{
+                HUD.flash(.labeledError(title: "没有更多信息", subtitle: nil),delay: 1)
+            }else{
+                self.page += 1
+                HUD.flash(.success,delay: 0.3)
+            }
+            self.dataArray.append(contentsOf: result)
             self.tableView.reloadData()
         }
     }

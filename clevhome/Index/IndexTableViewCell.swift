@@ -29,4 +29,18 @@ class IndexTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configCell(data:Device){
+        img.image = R.image.light_bright()
+        title.text = data.type.rawValue
+        desc.text = data.desc
+        state.text = data.state.rawValue
+        
+        switch data.state {
+        case .on:
+            state.backgroundColor  = UIColor.green
+        default:
+            state.backgroundColor  = UIColor.lightGray
+        }
+    }
+    
 }

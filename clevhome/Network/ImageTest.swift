@@ -34,8 +34,8 @@ struct EmotionRecognition {
         let url = URL(string: ERConfig.urlPathStr)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        //request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
-        //request.addValue(ERConfig.key, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+        request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+        request.addValue(ERConfig.key, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
         request.httpBody = data
         let task = session.dataTask(with: (request as URLRequest)) { (data, reponse, error) in
             completionHandler(data, reponse)
