@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pVW-Sy-kay">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -133,39 +134,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_dark" translatesAutoresizingMaskIntoConstraints="NO" id="z6P-q2-9OL"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_bright" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-ig-LZe">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="chB-Yb-YgM"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电灯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZB-oC-88p">
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9TF-wL-drO">
-                                <connections>
-                                    <action selector="switch:" destination="5vc-3u-kd5" eventType="valueChanged" id="fvk-cN-GVE"/>
-                                </connections>
-                            </switch>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_dark" translatesAutoresizingMaskIntoConstraints="NO" id="z6P-q2-9OL"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_bright" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-ig-LZe" userLabel="Bulb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="chB-Yb-YgM"/>
+                                    <constraint firstAttribute="width" secondItem="gzs-ig-LZe" secondAttribute="height" multiplier="4:5" id="pHz-TF-hh3"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="z6P-q2-9OL" firstAttribute="width" secondItem="gzs-ig-LZe" secondAttribute="width" id="2XP-cz-0GV"/>
+                            <constraint firstItem="z6P-q2-9OL" firstAttribute="centerX" secondItem="2CK-t9-Z6d" secondAttribute="centerX" id="0PE-pR-qex"/>
                             <constraint firstItem="z6P-q2-9OL" firstAttribute="centerX" secondItem="gzs-ig-LZe" secondAttribute="centerX" id="4Wb-On-KZC"/>
-                            <constraint firstItem="9TF-wL-drO" firstAttribute="top" secondItem="MZB-oC-88p" secondAttribute="bottom" constant="8" id="7w9-rl-wj2"/>
                             <constraint firstItem="MZB-oC-88p" firstAttribute="top" secondItem="FlZ-Ol-03D" secondAttribute="bottom" constant="8" id="93s-tN-ZFy"/>
-                            <constraint firstItem="z6P-q2-9OL" firstAttribute="height" secondItem="gzs-ig-LZe" secondAttribute="height" id="Bwo-B8-RAv"/>
-                            <constraint firstItem="9TF-wL-drO" firstAttribute="trailing" secondItem="2CK-t9-Z6d" secondAttribute="trailingMargin" id="Xpg-Rf-TwW"/>
-                            <constraint firstItem="gzs-ig-LZe" firstAttribute="top" secondItem="FlZ-Ol-03D" secondAttribute="bottom" constant="8" id="cS7-uF-J4K"/>
+                            <constraint firstItem="z6P-q2-9OL" firstAttribute="centerY" secondItem="2CK-t9-Z6d" secondAttribute="centerY" id="BSi-AM-xMI"/>
+                            <constraint firstItem="gzs-ig-LZe" firstAttribute="centerX" secondItem="2CK-t9-Z6d" secondAttribute="centerX" id="Fb0-xE-SIC"/>
+                            <constraint firstItem="z6P-q2-9OL" firstAttribute="width" secondItem="gzs-ig-LZe" secondAttribute="width" id="KCs-1T-qqj"/>
+                            <constraint firstItem="gzs-ig-LZe" firstAttribute="centerY" secondItem="2CK-t9-Z6d" secondAttribute="centerY" id="cz2-nK-pBd"/>
                             <constraint firstItem="z6P-q2-9OL" firstAttribute="centerY" secondItem="gzs-ig-LZe" secondAttribute="centerY" id="tse-dd-TSN"/>
                             <constraint firstItem="MZB-oC-88p" firstAttribute="trailing" secondItem="2CK-t9-Z6d" secondAttribute="trailingMargin" id="u2m-Ch-t14"/>
-                            <constraint firstItem="gzs-ig-LZe" firstAttribute="leading" secondItem="2CK-t9-Z6d" secondAttribute="leadingMargin" id="vg2-Vq-UFe"/>
+                            <constraint firstItem="z6P-q2-9OL" firstAttribute="height" secondItem="gzs-ig-LZe" secondAttribute="height" id="xd8-S8-Qgn"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="icon" destination="gzs-ig-LZe" id="dIh-hd-DuZ"/>
+                        <outlet property="bulb" destination="gzs-ig-LZe" id="M0t-ad-1NK"/>
+                        <outlet property="darkbulb" destination="z6P-q2-9OL" id="3OG-ML-rOw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEK-oR-NcH" userLabel="First Responder" sceneMemberID="firstResponder"/>

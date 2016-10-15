@@ -19,6 +19,7 @@ class IndexViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
         //设置刷新
         let header = MJRefreshNormalHeader(refreshingBlock: {
             self.tableView.mj_header.beginRefreshing()
@@ -43,6 +44,10 @@ class IndexViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadList(loadMore: false)
+    }
     /**
      获取数据方法
      
@@ -82,6 +87,10 @@ class IndexViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! ObjectDetailViewController).lightOn = (dataArray[(tableView.indexPathForSelectedRow?.row)!].state == .on)
+    }
 
 }
 

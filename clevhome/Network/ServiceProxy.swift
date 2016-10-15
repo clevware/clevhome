@@ -71,7 +71,7 @@ class ServiceProxy{
     
     internal static func setLightBright(lightID:String,brightness:Double,completeHandle:()->Void){
         HttpClient.invoke(url: getControlLight(), parameters: ["id":lightID,"brightness":brightness]) { (data, error) in
-            print(data)
+            
         }
     }
     
@@ -79,14 +79,16 @@ class ServiceProxy{
     internal static func uploadImage(img:Data,completeHandle:(EmotionJSON)->Void){
 
         EmotionRecognition.getEmotion(from: img) { (data, reponse) in
-            sendEmotionJSON(json: data!)
-            let emotionData = try! JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+            let emotionData = (try! JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSArray).map{APIBase(fromDictionary: $0 as! NSDictionary)}
+            //let APIRawData = APIBase(fromDictionary: emotionData as! NSDictionary)
+            sendEmotionJSON(json: emotionData[0].scores)
             print(emotionData)
         }
     }
     
-    private static func sendEmotionJSON(json:Data){
-        HttpClient.invoke(url: getSendEmotionURL(), parameters: ["data":json]) { (data, error) in
+    private static func sendEmotionJSON(json:Score){
+        
+        HttpClient.invoke(url: getSendEmotionURL(), parameters: ["happiness":json.happiness,"sadness":json.sadness]) { (data, error) in
             let json = try! JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
             print(json)
         }

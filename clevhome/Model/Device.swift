@@ -9,7 +9,7 @@
 import Foundation
 struct Device {
     var id:String
-    var type:DeviceType = .blub
+    var type:DeviceType = .bulb
     var state:DeviceState
     var desc:String = "我的灯泡"
     
@@ -34,7 +34,7 @@ struct Device {
 
 
 enum DeviceType:String{
-    case blub = "电灯"
+    case bulb = "电灯"
 }
 
 enum DeviceState:String{

@@ -9,9 +9,17 @@
 import UIKit
 import SnapKit
 class ObjectDetailViewController: UIViewController {
-    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var bulb: UIImageView!
+    @IBOutlet weak var darkbulb: UIImageView!
+    
+    var lightOn:Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !lightOn{switchState()}
+        darkbulb.isUserInteractionEnabled = true
+        darkbulb.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.switchState)))
+        bulb.isUserInteractionEnabled = true
+        bulb.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.switchState)))
         // Do any additional setup after loading the view.
     }
 
@@ -20,13 +28,13 @@ class ObjectDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func `switch`(_ sender: UISwitch) {
-        if sender.isOn{
+    func switchState() {
+        if lightOn!{
             ServiceProxy.setLightBright(lightID: "1", brightness: 100, completeHandle: { 
                 
             })
             UIView.animate(withDuration: 1, delay: 0.5, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: [], animations: {
-                self.icon.alpha = 1
+                self.bulb.alpha = 1
                 }, completion: { (bool) in
                     
             })
@@ -35,11 +43,12 @@ class ObjectDetailViewController: UIViewController {
                 
             })
             UIView.animate(withDuration: 1, delay: 0.5, usingSpringWithDamping: 0.0, initialSpringVelocity: 0, options: [], animations: {
-                self.icon.alpha = 0
+                self.bulb.alpha = 0
                 }, completion: { (bool) in
                     
             })
         }
+        lightOn = !lightOn
     }
 
     /*

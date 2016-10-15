@@ -30,6 +30,9 @@
 		35CB0D6A1DB190DC00A44D32 /* UIVIewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB0D691DB190DC00A44D32 /* UIVIewController+Extension.swift */; };
 		35DAF7651DB2653E00A7D6E4 /* ImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DAF7641DB2653E00A7D6E4 /* ImageTest.swift */; };
 		35DAF7671DB27BEC00A7D6E4 /* EmotionJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DAF7661DB27BEC00A7D6E4 /* EmotionJSON.swift */; };
+		35DAF76B1DB2EEF700A7D6E4 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DAF7681DB2EEF700A7D6E4 /* APIBase.swift */; };
+		35DAF76C1DB2EEF700A7D6E4 /* FaceRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DAF7691DB2EEF700A7D6E4 /* FaceRectangle.swift */; };
+		35DAF76D1DB2EEF700A7D6E4 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DAF76A1DB2EEF700A7D6E4 /* Score.swift */; };
 		35E189AA1DB2232C007E5624 /* AnimateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E189A91DB2232C007E5624 /* AnimateButton.swift */; };
 		35E2D4141DB253C600E8E543 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E2D4131DB253C600E8E543 /* Device.swift */; };
 		B1EFA64C3934BA274D5ED748 /* Pods_clevhome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12A791AB0479F2C682797C5 /* Pods_clevhome.framework */; };
@@ -61,6 +64,9 @@
 		35CB0D691DB190DC00A44D32 /* UIVIewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extension.swift"; sourceTree = "<group>"; };
 		35DAF7641DB2653E00A7D6E4 /* ImageTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTest.swift; path = Network/ImageTest.swift; sourceTree = "<group>"; };
 		35DAF7661DB27BEC00A7D6E4 /* EmotionJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmotionJSON.swift; path = Model/EmotionJSON.swift; sourceTree = "<group>"; };
+		35DAF7681DB2EEF700A7D6E4 /* APIBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIBase.swift; path = Model/APIBase.swift; sourceTree = "<group>"; };
+		35DAF7691DB2EEF700A7D6E4 /* FaceRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FaceRectangle.swift; path = Model/FaceRectangle.swift; sourceTree = "<group>"; };
+		35DAF76A1DB2EEF700A7D6E4 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Score.swift; path = Model/Score.swift; sourceTree = "<group>"; };
 		35E189A91DB2232C007E5624 /* AnimateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimateButton.swift; path = Control/AnimateButton.swift; sourceTree = "<group>"; };
 		35E2D4131DB253C600E8E543 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Model/Device.swift; sourceTree = "<group>"; };
 		A12A791AB0479F2C682797C5 /* Pods_clevhome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clevhome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +204,9 @@
 		35E2D4121DB253AB00E8E543 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				35DAF7681DB2EEF700A7D6E4 /* APIBase.swift */,
+				35DAF7691DB2EEF700A7D6E4 /* FaceRectangle.swift */,
+				35DAF76A1DB2EEF700A7D6E4 /* Score.swift */,
 				35E2D4131DB253C600E8E543 /* Device.swift */,
 				35DAF7661DB27BEC00A7D6E4 /* EmotionJSON.swift */,
 			);
@@ -360,6 +369,7 @@
 				35CB0D551DB17F3700A44D32 /* MainViewController.swift in Sources */,
 				35CB0D631DB1840B00A44D32 /* IndexTableViewDelegate.swift in Sources */,
 				35CB0D651DB1842600A44D32 /* IndexTableViewCell.swift in Sources */,
+				35DAF76C1DB2EEF700A7D6E4 /* FaceRectangle.swift in Sources */,
 				35CB0D501DB17D7C00A44D32 /* HttpClient.swift in Sources */,
 				3592BA4F1DB17582009D9F43 /* SecondViewController.swift in Sources */,
 				358BCFA61DB25E170007BF2F /* Audio.swift in Sources */,
@@ -367,11 +377,13 @@
 				3592BA4B1DB17582009D9F43 /* AppDelegate.swift in Sources */,
 				35E2D4141DB253C600E8E543 /* Device.swift in Sources */,
 				35DAF7671DB27BEC00A7D6E4 /* EmotionJSON.swift in Sources */,
+				35DAF76B1DB2EEF700A7D6E4 /* APIBase.swift in Sources */,
 				358BCFA81DB25E220007BF2F /* Image.swift in Sources */,
 				3592BA4D1DB17582009D9F43 /* IndexViewController.swift in Sources */,
 				35CB0D521DB17DD500A44D32 /* ServiceProxy.swift in Sources */,
 				35B720B21DB177DD00F5C10F /* R.generated.swift in Sources */,
 				35CB0D5B1DB1811600A44D32 /* ControlViewController.swift in Sources */,
+				35DAF76D1DB2EEF700A7D6E4 /* Score.swift in Sources */,
 				35CB0D611DB1816C00A44D32 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
